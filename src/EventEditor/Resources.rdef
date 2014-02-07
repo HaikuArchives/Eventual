@@ -1,0 +1,14 @@
+resource app_flags B_MULTIPLE_LAUNCH;
+
+resource app_signature "application/x-vnd.Hitech.Eventual.EventEditor";
+
+resource app_version {
+	major = 0,
+	middle = 5,
+	minor = 0,
+
+	variety = 1,
+
+	short_info = "Eventual Editor",
+	long_info = "Create and edit individual events for Eventual personal organizer."
+};

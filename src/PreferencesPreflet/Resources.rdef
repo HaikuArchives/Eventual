@@ -1,0 +1,14 @@
+resource app_flags B_SINGLE_LAUNCH;
+
+resource app_signature "application/x-vnd.Hitech.Eventual.Preferences";
+
+resource app_version {
+	major = 0,
+	middle = 5,
+	minor = 0,
+
+	variety = 1,
+
+	short_info = "Eventual Preferences",
+	long_info = "Set preferences for the Eventual personal organizer."
+};

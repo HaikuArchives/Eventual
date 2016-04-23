@@ -48,7 +48,7 @@ RSRCS=
 #		and it's name
 #		library: my_lib.a entry: my_lib.a or path/my_lib.a
 LIBS= 	be		\
-	   	stdc++	
+		$(STDCPPLIBS)	
 		
 #	specify additional paths to directories following the standard
 #	libXXX.so or libXXX.a naming scheme.  You can specify full paths
@@ -105,9 +105,11 @@ COMPILER_FLAGS =
 #	specify additional linker flags
 LINKER_FLAGS =
 
+## Include the Makefile-Engine
+DEVEL_DIRECTORY := \
+	$(shell findpaths -r "makefile_engine" B_FIND_PATH_DEVELOP_DIRECTORY)
+include $(DEVEL_DIRECTORY)/etc/makefile-engine
 
-## include the makefile-engine
-include /boot/develop/etc/makefile-engine
 
 copy:
 	

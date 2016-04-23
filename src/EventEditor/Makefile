@@ -66,17 +66,17 @@ RSRCS= $(PATH_TO_RESOURCES)/UniversityLogo.rsrc
 #		naming scheme you need to specify the path to the library
 #		and it's name
 #		library: my_lib.a entry: my_lib.a or path/my_lib.a
-LIBS= 	TimeRepresentation		\
-			PreferencesClasses		\
-			Event							\
-			Activity						\
-			CalendarModule				\
-			CalendarControl			\
-			Category						\
-			Utilities					\
-			be								\
-			stdc++						\
-			tracker
+LIBS= 	TimeRepresentation	\
+		PreferencesClasses	\
+		Event				\
+		Activity			\
+		CalendarModule		\
+		CalendarControl		\
+		Category			\
+		Utilities			\
+		be					\
+		$(STDCPPLIBS)		\
+		tracker
 
 #	specify additional paths to directories following the standard
 #	libXXX.so or libXXX.a naming scheme.  You can specify full paths
@@ -118,17 +118,17 @@ DEFINES=
 #	if unspecified default warnings will be used
 #	NONE = supress all warnings
 #	ALL = enable all warnings
-WARNINGS = 
+WARNINGS = ALL
 
 #	specify whether image symbols will be created
 #	so that stack crawls in the debugger are meaningful
 #	if TRUE symbols will be created
-SYMBOLS = 
+SYMBOLS =
 
 #	specify debug settings
 #	if TRUE will allow application to be run from a source-level
 #	debugger.  Note that this will disable all optimzation.
-DEBUGGER = 
+DEBUGGER =
 
 #	specify additional compiler flags for all files
 COMPILER_FLAGS =
@@ -148,8 +148,10 @@ APP_VERSION =
 #	/dev/video/usb when loaded. Default is "misc".
 DRIVER_PATH = 
 
-## include the makefile-engine
-include $(BUILDHOME)/etc/makefile-engine
+## Include the Makefile-Engine
+DEVEL_DIRECTORY := \
+	$(shell findpaths -r "makefile_engine" B_FIND_PATH_DEVELOP_DIRECTORY)
+include $(DEVEL_DIRECTORY)/etc/makefile-engine
 
 
 copy:

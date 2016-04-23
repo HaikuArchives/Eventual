@@ -54,7 +54,7 @@ RSRCS= Resources.rsrc	\
 #		and it's name
 #		library: my_lib.a entry: my_lib.a or path/my_lib.a
 LIBS= 	be		\
-	   	stdc++	\
+	   	$(STDCPPLIBS) \
 	   	translation	\
 	   	Utilities	\
 	   	CalendarModule	\
@@ -89,7 +89,7 @@ LOCAL_INCLUDE_PATHS = $(PATH_TO_LIB_SOURCES)/CalendarModule		\
 
 #	specify the level of optimization that you desire
 #	NONE, SOME, FULL
-OPTIMIZE= SOME
+OPTIMIZE= FULL
 
 #	specify any preprocessor symbols to be defined.  The symbols
 #	will be set to a value of 1.  For example specify DEBUG if you want
@@ -105,12 +105,12 @@ WARNINGS = ALL
 #	specify whether image symbols will be created
 #	so that stack crawls in the debugger are meaningful
 #	if TRUE symbols will be created
-SYMBOLS = TRUE
+SYMBOLS = 
 
 #	specify debug settings
 #	if TRUE will allow application to be run from
 #	a source-level debugger
-DEBUGGER = TRUE
+DEBUGGER = 
 
 #	specify additional compiler flags for all files
 COMPILER_FLAGS =
@@ -118,9 +118,10 @@ COMPILER_FLAGS =
 #	specify additional linker flags
 LINKER_FLAGS =
 
-
-## include the makefile-engine
-include /boot/develop/etc/makefile-engine
+## Include the Makefile-Engine
+DEVEL_DIRECTORY := \
+	$(shell findpaths -r "makefile_engine" B_FIND_PATH_DEVELOP_DIRECTORY)
+include $(DEVEL_DIRECTORY)/etc/makefile-engine
 
 copy:
 	cp objects.x86-gcc4-debug/$(NAME) ../..

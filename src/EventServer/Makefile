@@ -61,18 +61,18 @@ RSRCS=	$(PATH_TO_RESOURCES)/EventualIcon.rsrc		\
 #		naming scheme you need to specify the path to the library
 #		and it's name
 #		library: my_lib.a entry: my_lib.a or path/my_lib.a
-LIBS= 	Utilities					\
-			PreferencesClasses		\
-			TimeRepresentation		\
-			Event							\
-			Activity						\
-			CalendarModule				\
-			CalendarControl			\
-			Category						\
-			Utilities					\
-			be								\
-			stdc++						\
-			tracker
+LIBS= 	Utilities			\
+		PreferencesClasses	\
+		TimeRepresentation	\
+		Event				\
+		Activity			\
+		CalendarModule		\
+		CalendarControl		\
+		Category			\
+		Utilities			\
+		be					\
+		$(STDCPPLIBS)		\
+		tracker
 
 #	specify additional paths to directories following the standard
 #	libXXX.so or libXXX.a naming scheme.  You can specify full paths
@@ -80,7 +80,7 @@ LIBS= 	Utilities					\
 #	be recursive, so include all of the paths where libraries can
 #	be found.  Directories where source files are found are
 #	automatically included.
-LIBPATHS= lib
+LIBPATHS= ../../lib
 
 #	additional paths to look for system headers
 #	thes use the form: #include <header>
@@ -144,8 +144,10 @@ APP_VERSION =
 #	/dev/video/usb when loaded. Default is "misc".
 DRIVER_PATH = 
 
-## include the makefile-engine
-include $(BUILDHOME)/etc/makefile-engine
+## Include the Makefile-Engine
+DEVEL_DIRECTORY := \
+	$(shell findpaths -r "makefile_engine" B_FIND_PATH_DEVELOP_DIRECTORY)
+include $(DEVEL_DIRECTORY)/etc/makefile-engine
 
 
 copy:

@@ -786,7 +786,7 @@ status_t	CalendarModulePreferences::Archive( BMessage* in, bool deep )
 	if ( toReturn != B_OK ) { return toReturn; }
 	
 	toReturn = in->AddInt8( "NumberOfWeekends",
-							( limit = ( unsigned int8 )( this->weekends->CountItems() ) ) );
+							( limit = ( uint8 )( this->weekends->CountItems() ) ) );
 	if ( toReturn != B_OK ) { return toReturn; }
 	
 	for ( index = 0; index < limit; ++index )

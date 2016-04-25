@@ -64,7 +64,7 @@ RSRCS=
 #		and it's name
 #		library: my_lib.a entry: my_lib.a or path/my_lib.a
 LIBS= 	be			\
-			stdc++
+		$(STDCPPLIBS)
 
 #	specify additional paths to directories following the standard
 #	libXXX.so or libXXX.a naming scheme.  You can specify full paths
@@ -132,8 +132,10 @@ APP_VERSION =
 #	/dev/video/usb when loaded. Default is "misc".
 DRIVER_PATH = 
 
-## include the makefile-engine
-include $(BUILDHOME)/etc/makefile-engine
+## Include the Makefile-Engine
+DEVEL_DIRECTORY := \
+	$(shell findpaths -r "makefile_engine" B_FIND_PATH_DEVELOP_DIRECTORY)
+include $(DEVEL_DIRECTORY)/etc/makefile-engine
 
 copy:
 	cp objects.x86-gcc4-release/$(NAME) ./lib

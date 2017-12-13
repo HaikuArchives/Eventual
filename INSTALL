@@ -7,7 +7,6 @@
 6.cp lib*YOURLIB*.so ../EventServer/lib*YOURLIB*.so
 7.cp lib*YOURLIB*.so ../PreferencesPreflet/lib*YOURLIB*.so
 8.cp lib*YOURLIB*.so ../home/config/non-packaged/lib
-
 ************REPEAT FOR ALL LIBRARIES******************
 9.cd src/EventEditor
 10.make

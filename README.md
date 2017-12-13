@@ -1,5 +1,5 @@
 
-![Screenshot](https://github.com/EppMouse/Eventual/screen.PNG)
+![Screenshot](Eventual/screen.PNG)
 
 Eventual
 =================

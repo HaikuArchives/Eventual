@@ -1,0 +1,17 @@
+1.Open terminal
+2.cd Eventual-master
+3.sh makelib.sh
+************REPEAT FOR ALL LIBRARIES******************
+4.cd src/Libraries/*YOUR LIB*/objects.x86-cc2-release
+5.cp lib*YOURLIB*.so ../EventEditor/lib*YOURLIB*.so
+6.cp lib*YOURLIB*.so ../EventServer/lib*YOURLIB*.so
+7.cp lib*YOURLIB*.so ../PreferencesPreflet/lib*YOURLIB*.so
+8.cp lib*YOURLIB*.so ../home/config/non-packaged/lib/lib*YOURLIB*.so
+************REPEAT FOR ALL LIBRARIES******************
+9.cd src/EventEditor
+10.make
+11.cd src/EventServer
+12.make
+13.cd src/PreferencesPreflet
+14.make
+15.Run EventualEditor or EventualServer or EventualPreferences

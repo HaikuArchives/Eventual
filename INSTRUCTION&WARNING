@@ -1,0 +1,26 @@
+*****!!!!WITHOUT COMPILED LIBS!!!!*****
+*******MAKE EVENTEDITOR*********
+1.cd /src/EventEditor 
+2.make(get error: "not found TimeRepresentation lib"; get error: "not found PreferencesClasses lib"; get error: "not found Event lib"; get error: "not found  Activity lib"; get error:"not found CalendarModule lib";get error "not found CalendarControl"; get error "Category lib"; get error "not found Utilities lib"; )
+*******MAKE EVENTEDITOR*********
+*******MAKE EVENTSERVER*********
+1.cd /src/EventServer
+2.make(get error: "not found TimeRepresentation lib"; get error: "not found PreferencesClasses lib"; get error: "not found Event lib"; get error: "not found  Activity lib"; get error:"not found CalendarModule lib";get error "not found CalendarControl"; get error "Category lib"; get error "not found Utilities lib"; )
+*******MAKE EVENTSERVER*********
+********MAKE EVENTPREF**********
+1.cd /src/PreferencesPreflet
+2.make(get error: "not found TimeRepresentation lib"; get error: "not found PreferencesClasses lib"; get error: "not found Event lib"; get error: "not found  Activity lib"; get error:"not found CalendarModule lib";get error "not found CalendarControl"; get error "Category lib"; get error "not found Utilities lib"; )
+********MAKE EVENTPREF**********
+*****!!!!WITHOUT COMPILED LIBS!!!!*****
+3.Build all library (In directory Libraries);
+4.Copy lib to /src/EventEditor
+4.1. Copy lib to /src/EventServer
+4.2. Copy lib to /src PreferencesPreflet
+5.cd /src/EventEditor;
+6.make(OK)
+7.cd /src/EventServer;
+8.make(OK)
+9.cd /src/PreferencesPreflet
+10.make(OK)
+11.Copy all compiled library to /home/config/non-packaged/lib
+12.Run EventualEditor or Run EventualServer or Run EventualPreferences 

@@ -129,9 +129,9 @@ APP_VERSION =
 DRIVER_PATH = 
 
 ## include the makefile-engine
-include $(BUILDHOME)/etc/makefile-engine
-
-
+DEVEL_DIRECTORY := \
+	$(shell findpaths -r "makefile_engine" B_FIND_PATH_DEVELOP_DIRECTORY)
+include $(DEVEL_DIRECTORY)/etc/makefile-engine
 
 copy:
 	cp objects.x86-gcc4-release/$(NAME) ./lib

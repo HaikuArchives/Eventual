@@ -83,7 +83,7 @@ status_t		pref_PopulateAllPreferences( void )
 	}
 	
 	toReturn = ReadFileWithPreferences( &preferencesFile );
-	if ( toReturn != B_OK ) {
+	if ( toReturn != B_OK && pref_SaveAllPreferences() != B_OK) {
 		sb.SetTo( "Did not succeed to read the preferences from the file! Error = " );
 		sb << toReturn;
 		utl_Deb = new DebuggerPrintout( sb.String() );

@@ -6,7 +6,7 @@
 #define _CATEGORY_H_
 
 #include <iostream>
-#include <ostream.h>
+//#include <ostream.h>
 #include <stdlib.h>
 
 #include <InterfaceKit.h>

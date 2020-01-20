@@ -18,6 +18,8 @@ NAME= libCategory.so
 #	DRIVER: Kernel Driver
 TYPE= SHARED
 
+TARGET_DIR = ../../lib
+
 #	add support for new Pe and Eddie features
 #	to fill in generic makefile
 
